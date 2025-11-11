@@ -28,6 +28,7 @@ export function registerApiTool(server: McpServer): void {
     },
     async (args: z.infer<typeof apiSchema>) => {
       const { method, endpoint, body, params } = args;
+
       const result = await metabaseApiCall(
         method,
         endpoint,

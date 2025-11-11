@@ -20,6 +20,7 @@ import {
   registerCreateCollectionTool,
   registerListCollectionsTool,
 } from "./src/tools/collections.ts";
+import { registerAppendCardToDashboardTool } from "./src/tools/dashboards.ts";
 
 const server = new McpServer({
   name: "metabase-mcp",
@@ -36,6 +37,7 @@ registerExecuteCardTool(server);
 registerCreateCardTool(server);
 registerListCollectionsTool(server);
 registerCreateCollectionTool(server);
+registerAppendCardToDashboardTool(server);
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
